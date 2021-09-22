@@ -3,10 +3,16 @@
 
 /*  EXERCISE 1
     TODO: Declare the Loan interface. */
-
+    
+interface Loan {
+        principal: number,
+        interestRate: number    //* Interest rate percentage (eg. 14 is 14%)
+}
 
 /*  TODO: Declare the ConventionalLoan interface. */
-
+interface ConventionalLoan extends Loan {
+    months: number      //* Total number of months
+}
 
 
 /*  TODO: Update the calculateInterestOnlyLoanPayment function. */

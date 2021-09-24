@@ -5,11 +5,32 @@
 
 class BuildArray {
     // TODO Define the properties
+    private _items: number;
+    private _sortOrder: "ascending" | "descending";
 
     // TODO Define the constructor
+    constructor(items: number, sortOrder: "ascending" | "descending") {
+        this._items = items;
+        this._sortOrder = sortOrder;
+    }
 
     // TODO Define the accessors
+    get items(): number {
+        return this._items;
+    }
 
+    set items(items) {
+        this._items = items;
+    }
+
+    get sortOrder() {
+        return this._sortOrder;
+    }
+
+    set sortOrder(sortOrder) {
+        this._sortOrder = sortOrder;
+    }
+    
     // TODO Define the methods
 
 }

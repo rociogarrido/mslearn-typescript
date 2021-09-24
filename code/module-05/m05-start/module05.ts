@@ -32,7 +32,39 @@ class BuildArray {
     }
     
     // TODO Define the methods
-
+    private sortDescending = (a: number, b: number) => {
+        if (a > b) {
+            return -1;
+        } else if (b > a) {
+            return 1;
+        } else {
+            return 0;}
+     }
+    private sortAscending = (a: number, b: number) => {
+        if (a > b) {
+            return 1;
+        } else if (b > a) {
+            return -1;
+        } else {
+            return 0; }
+    }
+    buildArray(): number[] {
+        let randomNumbers: number[] = [];
+        let nextNumber: number;
+        for (let counter = 0; counter < this.items; counter++) {
+            nextNumber = Math.ceil(Math.random() * (100 - 1));
+            if (randomNumbers.indexOf(nextNumber) === -1) {
+                randomNumbers.push(nextNumber);
+            } else {
+                counter--;
+            }
+        }
+        if (this._sortOrder === 'ascending') {
+            return randomNumbers.sort(this.sortAscending);
+        } else {
+            return randomNumbers.sort(this.sortDescending);
+        } 
+    }
 }
 
 /*  sortDescending is a comparison function that tells the sort method how to sort numbers
